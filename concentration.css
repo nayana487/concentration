@@ -26,7 +26,7 @@ td {
 }
 
 button {
-  width: 100px;
+  width: 150px;
   height:50px;
   color:red;
   font-size: 18px;
@@ -36,4 +36,5 @@ button {
   border-width: thick;
   margin-left: 400px;
   margin-bottom: 50px;
+  margin-top: 50px;
 }

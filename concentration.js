@@ -5,7 +5,6 @@ function hideStart(){
 $(".selections").hide();
 };
 
-//select box, onclick it should display = move 1
 $(".box").on("click", function(){
   if($(this).children().is(':hidden')) {
     $(this).children().show();
@@ -27,21 +26,52 @@ $(".box").on("click", function(){
      } else {
        //odd click
        previousMove = $(this);
-
      }
+
   }
+
 });
 
-//after two clicks, if move 1 === move 2 do nothing. if != hide both selection divs
+$("#button").on("click", function(){
+var list =  $(".box");
+var randomList =shuffle(list.toArray());
+
+for (var i = 0; i < randomList.length; i++) {
+   if(i<6){
+     $("#row1").append(randomList[i]);
+   } else if(i<12) {
+   $("#row2").append(randomList[i]);
+   } else if(i<18) {
+   $("#row3").append(randomList[i]);
+   } else if(i<24) {
+   $("#row4").append(randomList[i]);
+   } else {
+   $("#row5").append(randomList[i]);
+   }
+}
+});
 
 
+hideStart();
 
-//select another box it should display = move2
-//if contents move1 === move2 both should stay displayed
-//if move1 != move 2 both should hide
-//when all displayed, alert winnner
+function shuffle(array) {
+ var currentIndex = array.length, temporaryValue, randomIndex ;
 
+ // While there remain elements to shuffle...
+ while (0 !== currentIndex) {
 
+   // Pick a remaining element...
+   randomIndex = Math.floor(Math.random() * currentIndex);
+   currentIndex -= 1;
+
+   // And swap it with the current element.
+   temporaryValue = array[currentIndex];
+   array[currentIndex] = array[randomIndex];
+   array[randomIndex] = temporaryValue;
+ }
+
+ return array;
+}
 
 
 hideStart();
