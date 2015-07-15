@@ -23,3 +23,6 @@ http://diply.com/thatjusthappened/rick-grimes-dad-jokes-bad-good-hilarious/15405
 http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
 5. I would have liked to style this more, but I ran short on time.
+
+
+Access site using this link:http://nayana487.github.io/concentration/concentration.html
