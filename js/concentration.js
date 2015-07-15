@@ -1,30 +1,31 @@
 var previousMove;
 
-
+//start off with selections hidden
 function hideStart(){
 $(".selections").hide();
 };
 
+//
 $(".box").on("click", function(){
+  //added hidden so user can not select shown selections again
   if($(this).children().is(':hidden')) {
+    //tells to show if matched and hide again if non-matched
     $(this).children().show();
      if(previousMove != null) {
-       if(previousMove.text() === $(this).text()){
+       if(previousMove.html() === $(this).html()){
        } else{
           var box =   $(this).children();
           var tempVariable = previousMove;
+          //sets delay before hiding non-matching selections
           window.setTimeout(function(){
             box.hide();
             tempVariable.children().hide();
            }, 500);
 
        }
-       //seeing if the last two moves equal each other and if they don't equal each other hide them both
-
        previousMove = null;
 
      } else {
-       //odd click
        previousMove = $(this);
      }
 
@@ -33,6 +34,7 @@ $(".box").on("click", function(){
 });
 
 $("#button").on("click", function(){
+hideStart();
 var list =  $(".box");
 var randomList =shuffle(list.toArray());
 
@@ -51,20 +53,13 @@ for (var i = 0; i < randomList.length; i++) {
 }
 });
 
-
-hideStart();
-
+//fischer-yates for shuffle
 function shuffle(array) {
  var currentIndex = array.length, temporaryValue, randomIndex ;
-
- // While there remain elements to shuffle...
  while (0 !== currentIndex) {
 
-   // Pick a remaining element...
    randomIndex = Math.floor(Math.random() * currentIndex);
    currentIndex -= 1;
-
-   // And swap it with the current element.
    temporaryValue = array[currentIndex];
    array[currentIndex] = array[randomIndex];
    array[randomIndex] = temporaryValue;
