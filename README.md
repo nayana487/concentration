@@ -13,7 +13,7 @@ User Stories
 Approach
 
 1. I started off by finding a version of concentration online that is similar to the game I wanted to create. I played it several times to get a sense of all the moves I needed to make.
-http://diply.com/thatjusthappened/rick-grimes-dad-jokes-bad-good-hilarious/154051
+http://www.play.vg/games/52-Concentration.html
 
 2. I primarily used jquery to write my code. I also decided to tackle the js first and do the styling afterwards to make sure I at least had a working site before investing effort elsewhere. I started with the base structure I had for my tic tac toe game.
 
