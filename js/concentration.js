@@ -2,7 +2,7 @@ var previousMove;
 
 //start off with selections hidden
 function hideStart(){
-$(".selections").hide();
+$("i").hide();
 };
 
 //
@@ -33,40 +33,56 @@ $(".box").on("click", function(){
 
 });
 
-$("#button").on("click", function(){
-hideStart();
-var list =  $(".box");
-var randomList =shuffle(list.toArray());
+var classArray = ["fa fa-html5",
+    "fa fa-behance",
+    "fa fa-facebook",
+    "fa fa-jsfiddle",
+    "fa fa-github-alt",
+    "fa fa-slack",
+    "fa fa-pinterest-p",
+    "fa fa-wordpress",
+    "fa fa-youtube-play",
+    "fa fa-twitter-square",
+    "fa fa-vine",
+    "fa fa-reddit",
+    "fa fa-dribbble",
+    "fa fa-css3",
+    "fa fa-foursquare",
+    "fa fa-html5",
+    "fa fa-behance",
+    "fa fa-facebook",
+    "fa fa-jsfiddle",
+    "fa fa-github-alt",
+    "fa fa-slack",
+    "fa fa-pinterest-p",
+    "fa fa-wordpress",
+    "fa fa-youtube-play",
+    "fa fa-twitter-square",
+    "fa fa-vine",
+    "fa fa-reddit",
+    "fa fa-dribbble",
+    "fa fa-css3",
+    "fa fa-foursquare"
+];
 
-for (var i = 0; i < randomList.length; i++) {
-   if(i<6){
-     $("#row1").append(randomList[i]);
-   } else if(i<12) {
-   $("#row2").append(randomList[i]);
-   } else if(i<18) {
-   $("#row3").append(randomList[i]);
-   } else if(i<24) {
-   $("#row4").append(randomList[i]);
-   } else {
-   $("#row5").append(randomList[i]);
-   }
+function randomizeBoxes(){
+  var list =  $("i");
+  //da fuck...why does reset disappear the second time?
+  var copyClassArray = classArray;
+  for (var i = 0; i < list.length; i++) {
+    //picks randomNumber that is length of array
+     var randomNumber = Math.floor(Math.random()*copyClassArray.length);
+     //set classname of each i to randomnumber item
+     list[i].className = copyClassArray[randomNumber];
+     copyClassArray.splice( randomNumber, 1 );
+  }
 }
+
+$("#button").on("click", function(){
+  hideStart();
+  randomizeBoxes();
 });
 
-//fischer-yates for shuffle
-function shuffle(array) {
- var currentIndex = array.length, temporaryValue, randomIndex ;
- while (0 !== currentIndex) {
-
-   randomIndex = Math.floor(Math.random() * currentIndex);
-   currentIndex -= 1;
-   temporaryValue = array[currentIndex];
-   array[currentIndex] = array[randomIndex];
-   array[randomIndex] = temporaryValue;
- }
-
- return array;
-}
-
 
 hideStart();
+randomizeBoxes();
