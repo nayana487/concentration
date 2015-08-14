@@ -14,7 +14,7 @@ $(".box").on("click", function(){
      if(previousMove != null) {
        if(previousMove.html() === $(this).html()){
        } else{
-          var box =   $(this).children();
+          var box = $(this).children();
           var tempVariable = previousMove;
           //sets delay before hiding non-matching selections
           window.setTimeout(function(){
@@ -67,7 +67,7 @@ var classArray = ["fa fa-html5",
 
 function randomizeBoxes(){
   var list =  $("i");
-  //da fuck...why does reset disappear the second time?
+//why does reset disappear the second time?
   var copyClassArray = classArray;
   for (var i = 0; i < list.length; i++) {
     //picks randomNumber that is length of array
