@@ -67,7 +67,7 @@ var classArray = ["fa fa-html5",
 
 function randomizeBoxes(){
   var list =  $("i");
-//why does reset disappear the second time?
+//slice creates a new array
   var copyClassArray = classArray.slice();
   for (var i = 0; i < list.length; i++) {
     //picks randomNumber that is length of array
