@@ -2,7 +2,7 @@ var previousMove;
 
 //start off with selections hidden
 function hideStart(){
-$("i").hide();
+  $("i").hide();
 };
 
 //
@@ -68,7 +68,7 @@ var classArray = ["fa fa-html5",
 function randomizeBoxes(){
   var list =  $("i");
 //why does reset disappear the second time?
-  var copyClassArray = classArray;
+  var copyClassArray = classArray.slice();
   for (var i = 0; i < list.length; i++) {
     //picks randomNumber that is length of array
      var randomNumber = Math.floor(Math.random()*copyClassArray.length);
